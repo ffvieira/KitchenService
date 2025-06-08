@@ -8,26 +8,28 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\fova\\.nuget\\packages\\": {}
+    "C:\\Users\\fabri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Tests\\KitchenService.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Tests\\KitchenService.Tests.csproj",
       "projectName": "KitchenService.Tests",
-      "projectPath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Tests\\KitchenService.Tests.csproj",
-      "packagesPath": "C:\\Users\\fova\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Tests\\obj\\",
+      "projectPath": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Tests\\KitchenService.Tests.csproj",
+      "packagesPath": "C:\\Users\\fabri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fova\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\fabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.pkg.github.com/caiofabiogomes/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -65,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.410/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

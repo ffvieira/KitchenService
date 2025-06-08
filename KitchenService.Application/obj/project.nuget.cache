@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "sVV0tAOzpiI=",
+  "dgSpecHash": "YnXuvh2i5og=",
   "success": true,
-  "projectFilePath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Application\\KitchenService.Application.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Application\\KitchenService.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fabri\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.5\\microsoft.extensions.dependencyinjection.abstractions.9.0.5.nupkg.sha512",
+    "C:\\Users\\fabri\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.5\\microsoft.extensions.logging.abstractions.9.0.5.nupkg.sha512",
+    "C:\\Users\\fabri\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.5\\system.diagnostics.diagnosticsource.9.0.5.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,4 +1,4 @@
-namespace KitchenService.Domain;
+namespace KitchenService.Domain.ValueObjects;
 
 public class OrderItem
 {
