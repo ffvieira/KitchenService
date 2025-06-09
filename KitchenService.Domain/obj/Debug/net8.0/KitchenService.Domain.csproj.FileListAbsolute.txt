@@ -10,3 +10,15 @@ C:\Users\fabri\source\repos\KitchenService\KitchenService.Domain\obj\Debug\net8.
 C:\Users\fabri\source\repos\KitchenService\KitchenService.Domain\obj\Debug\net8.0\refint\KitchenService.Domain.dll
 C:\Users\fabri\source\repos\KitchenService\KitchenService.Domain\obj\Debug\net8.0\KitchenService.Domain.pdb
 C:\Users\fabri\source\repos\KitchenService\KitchenService.Domain\obj\Debug\net8.0\ref\KitchenService.Domain.dll
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\bin\Debug\net8.0\KitchenService.Domain.deps.json
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\bin\Debug\net8.0\KitchenService.Domain.dll
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\bin\Debug\net8.0\KitchenService.Domain.pdb
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\obj\Debug\net8.0\KitchenService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\obj\Debug\net8.0\KitchenService.Domain.AssemblyInfoInputs.cache
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\obj\Debug\net8.0\KitchenService.Domain.AssemblyInfo.cs
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\obj\Debug\net8.0\KitchenService.Domain.csproj.CoreCompileInputs.cache
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\obj\Debug\net8.0\KitchenService.Domain.sourcelink.json
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\obj\Debug\net8.0\KitchenService.Domain.dll
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\obj\Debug\net8.0\refint\KitchenService.Domain.dll
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\obj\Debug\net8.0\KitchenService.Domain.pdb
+C:\Users\fova\repo\KitchenService\KitchenService.Domain\obj\Debug\net8.0\ref\KitchenService.Domain.dll

@@ -4,20 +4,18 @@ Este microserviço é responsável por **processar pedidos recebidos**, permitin
 
 ---
 
-## 📦 Funcionalidades
+## Funcionalidades
 
-- ✅ Recebe pedidos via **mensageria (RabbitMQ)** com eventos `OrderCreated`
-- ✅ Salva os pedidos em **MongoDB**
-- ✅ Expõe API REST para:
-  - Ver pedidos pendentes
-  - Aceitar ou rejeitar pedidos
-- ✅ Publica eventos de volta:
+- Recebe pedidos via **mensageria (RabbitMQ)** com eventos `OrderCreated`
+- Salva os pedidos em **MongoDB**
+- Recebe eventos com os pedidos
+- Publica eventos de volta:
   - `OrderAcceptedEvent`
   - `OrderRejectedEvent`
 
 ---
 
-## 🧱 Arquitetura
+## Arquitetura
 
 - **Domain-Driven Design (DDD)**: entidades e regras de negócio puras
 - **Clean Architecture**: separação clara entre camadas
@@ -27,5 +25,5 @@ Este microserviço é responsável por **processar pedidos recebidos**, permitin
 
 ---
 
-## 🗂️ Estrutura do Projeto
+## Estrutura do Projeto
 

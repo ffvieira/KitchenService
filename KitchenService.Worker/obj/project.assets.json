@@ -2661,38 +2661,36 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fabri\\.nuget\\packages\\": {}
+    "C:\\Users\\fova\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Worker\\KitchenService.Worker.csproj",
+      "projectUniqueName": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Worker\\KitchenService.Worker.csproj",
       "projectName": "KitchenService.Worker",
-      "projectPath": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Worker\\KitchenService.Worker.csproj",
-      "packagesPath": "C:\\Users\\fabri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Worker\\obj\\",
+      "projectPath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Worker\\KitchenService.Worker.csproj",
+      "packagesPath": "C:\\Users\\fova\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Worker\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\fova\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.pkg.github.com/caiofabiogomes/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Application\\KitchenService.Application.csproj": {
-              "projectPath": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Application\\KitchenService.Application.csproj"
+            "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Application\\KitchenService.Application.csproj": {
+              "projectPath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Application\\KitchenService.Application.csproj"
             },
-            "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Infrastructure\\KitchenService.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Infrastructure\\KitchenService.Infrastructure.csproj"
+            "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Infrastructure\\KitchenService.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Infrastructure\\KitchenService.Infrastructure.csproj"
             }
           }
         }
@@ -2745,7 +2743,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.410/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

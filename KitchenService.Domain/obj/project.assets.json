@@ -8,28 +8,26 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\fabri\\.nuget\\packages\\": {}
+    "C:\\Users\\fova\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Domain\\KitchenService.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Domain\\KitchenService.Domain.csproj",
       "projectName": "KitchenService.Domain",
-      "projectPath": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Domain\\KitchenService.Domain.csproj",
-      "packagesPath": "C:\\Users\\fabri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabri\\source\\repos\\KitchenService\\KitchenService.Domain\\obj\\",
+      "projectPath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Domain\\KitchenService.Domain.csproj",
+      "packagesPath": "C:\\Users\\fova\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\fova\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.pkg.github.com/caiofabiogomes/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -67,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.410/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
