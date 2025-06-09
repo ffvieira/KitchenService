@@ -1,6 +1,0 @@
-C:\Users\fabri\source\repos\KitchenService\KitchenService.API\obj\Debug\net8.0\KitchenService.API.csproj.AssemblyReference.cache
-C:\Users\fabri\source\repos\KitchenService\KitchenService.API\obj\Debug\net8.0\KitchenService.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\fabri\source\repos\KitchenService\KitchenService.API\obj\Debug\net8.0\KitchenService.API.AssemblyInfoInputs.cache
-C:\Users\fabri\source\repos\KitchenService\KitchenService.API\obj\Debug\net8.0\KitchenService.API.AssemblyInfo.cs
-C:\Users\fabri\source\repos\KitchenService\KitchenService.API\obj\Debug\net8.0\KitchenService.API.csproj.CoreCompileInputs.cache
-C:\Users\fabri\source\repos\KitchenService\KitchenService.API\obj\Debug\net8.0\KitchenService.API.sourcelink.json

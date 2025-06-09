@@ -1,9 +1,7 @@
-using KitchenService.Application.Commands;
 using KitchenService.Application.Interfaces;
 using KitchenService.Domain.Entities;
 using KitchenService.Domain.Enums;
-using KitchenService.Domain.ValueObjects;
-using Moq;
+using NSubstitute;
 using Xunit;
 
 namespace KitchenService.UnitTests.Commands;
@@ -15,11 +13,11 @@ public class RejectOrderCommandHandlerTests
     {
         // Arrange
         var order = new Order("123", [new("x-salada", "X-Salada", "Sanduíche de carne com queijo e salada", 1)], "delivery", DateTime.UtcNow);
-        var repoMock = new Mock<IOrderRepository>();
-        repoMock.Setup(r => r.GetByIdAsync("123")).ReturnsAsync(order);
+        var repo = Substitute.For<IOrderRepository>();
+        repo.GetByIdAsync(order.Id).Returns(order);
 
-        var pubMock = new Mock<IOrderStatusPublisher>();
-        var handler = new RejectOrderCommandHandler(repoMock.Object, pubMock.Object);
+        var pubMock = Substitute.For<IOrderStatusPublisher>();
+        var handler = new RejectOrderCommandHandler(repo, pubMock);
 
         var command = new RejectOrderCommand
         {
@@ -33,7 +31,7 @@ public class RejectOrderCommandHandlerTests
         // Assert
         Assert.Equal(OrderStatus.Rejected, order.Status);
         Assert.Equal("Fora de estoque", order.RejectionReason);
-        repoMock.Verify(r => r.UpdateAsync(order), Times.Once);
-        pubMock.Verify(p => p.PublishRejectedAsync("123", "Fora de estoque"), Times.Once);
+        await repo.Received(1).UpdateAsync(order);
+        await pubMock.Received(1).PublishRejectedAsync(order.Id, "Fora de estoque");
     }
 }

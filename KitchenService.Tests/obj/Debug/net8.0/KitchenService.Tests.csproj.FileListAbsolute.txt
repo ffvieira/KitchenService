@@ -1,15 +1,3 @@
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\bin\Debug\net8.0\KitchenService.Tests.deps.json
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\bin\Debug\net8.0\KitchenService.Tests.dll
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\bin\Debug\net8.0\KitchenService.Tests.pdb
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\obj\Debug\net8.0\KitchenService.Tests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\obj\Debug\net8.0\KitchenService.Tests.AssemblyInfoInputs.cache
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\obj\Debug\net8.0\KitchenService.Tests.AssemblyInfo.cs
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\obj\Debug\net8.0\KitchenService.Tests.csproj.CoreCompileInputs.cache
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\obj\Debug\net8.0\KitchenService.Tests.sourcelink.json
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\obj\Debug\net8.0\KitchenService.Tests.dll
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\obj\Debug\net8.0\refint\KitchenService.Tests.dll
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\obj\Debug\net8.0\KitchenService.Tests.pdb
-C:\Users\fabri\source\repos\KitchenService\KitchenService.Tests\obj\Debug\net8.0\ref\KitchenService.Tests.dll
 C:\Users\fova\repo\KitchenService\KitchenService.Tests\bin\Debug\net8.0\KitchenService.Tests.deps.json
 C:\Users\fova\repo\KitchenService\KitchenService.Tests\bin\Debug\net8.0\KitchenService.Tests.runtimeconfig.json
 C:\Users\fova\repo\KitchenService\KitchenService.Tests\bin\Debug\net8.0\KitchenService.Tests.dll

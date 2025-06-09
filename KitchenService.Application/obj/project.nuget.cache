@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "QEcaY3fCaa0=",
+  "dgSpecHash": "PJBs4cC0wQU=",
   "success": true,
   "projectFilePath": "C:\\Users\\fova\\repo\\KitchenService\\KitchenService.Application\\KitchenService.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\fova\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.5\\microsoft.extensions.dependencyinjection.abstractions.9.0.5.nupkg.sha512",
-    "C:\\Users\\fova\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.5\\microsoft.extensions.logging.abstractions.9.0.5.nupkg.sha512",
-    "C:\\Users\\fova\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.5\\system.diagnostics.diagnosticsource.9.0.5.nupkg.sha512"
+    "C:\\Users\\fova\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\fova\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
