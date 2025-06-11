@@ -3,7 +3,7 @@ using KitchenService.Application.Interfaces;
 using NSubstitute;
 using Xunit;
 
-namespace KitchenService.UnitTests.Commands;
+namespace KitchenService.Tests.Application;
 
 public class HandleNewOrderCommandHandlerTests
 {

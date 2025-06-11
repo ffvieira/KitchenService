@@ -1,11 +1,10 @@
 using KitchenService.Application.Interfaces;
 using KitchenService.Domain.Entities;
 using KitchenService.Domain.Enums;
-using KitchenService.Domain.ValueObjects;
 using NSubstitute;
 using Xunit;
 
-namespace KitchenService.UnitTests.Commands;
+namespace KitchenService.Tests.Application;
 
 public class AcceptOrderCommandHandlerTests
 {
@@ -13,7 +12,7 @@ public class AcceptOrderCommandHandlerTests
     public async Task HandleAsync_Should_Set_Status_To_Accepted_And_Publish_Event()
     {
         // Arrange
-        var order = new Order("123", new List<OrderItem> { new("burger01", "Cheeseburger", "Burguer and cheese", 2) }, "balcão", DateTime.UtcNow);
+        var order = new Order("123", [new("burger01", "Cheeseburger", "Burguer and cheese", 2)], "balcão", DateTime.UtcNow);
         var repo = Substitute.For<IOrderRepository>();
         repo.GetByIdAsync(order.Id).Returns(order);
 

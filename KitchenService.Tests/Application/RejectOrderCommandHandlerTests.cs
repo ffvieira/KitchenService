@@ -4,7 +4,7 @@ using KitchenService.Domain.Enums;
 using NSubstitute;
 using Xunit;
 
-namespace KitchenService.UnitTests.Commands;
+namespace KitchenService.Tests.Application;
 
 public class RejectOrderCommandHandlerTests
 {
