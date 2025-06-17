@@ -3,6 +3,8 @@ using KitchenService.Application.Interfaces;
 using KitchenService.Infrastructure.Messaging.Consumer;
 using KitchenService.Infrastructure.Messaging.Publisher;
 using KitchenService.Infrastructure.MongoDb;
+using KitchenService.Infrastructure.Monitoring;
+using KitchenService.Worker;
 using MassTransit;
 
 var host = Host.CreateDefaultBuilder(args)
@@ -11,6 +13,8 @@ var host = Host.CreateDefaultBuilder(args)
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IOrderStatusPublisher, OrderStatusPublisher>();
         services.AddScoped<HandleNewOrderCommandHandler>();
+        services.AddSingleton<IHealthCheck, HealthCheck>();
+
 
         services.AddMassTransit(x =>
         {
