@@ -3,7 +3,7 @@
 public class OrderCreatedEvent
 {
     public string OrderId { get; set; } = default!;
-    public List<OrderItemDto> Items { get; set; } = new();
+    public List<OrderItemDto> Items { get; set; } = [];
     public string DeliveryMethod { get; set; } = default!;
     public DateTime CreatedAt { get; set; }
 }

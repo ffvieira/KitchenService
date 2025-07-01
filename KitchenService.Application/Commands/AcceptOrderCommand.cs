@@ -1,28 +1,25 @@
 ﻿using KitchenService.Application.Interfaces;
 
-public class AcceptOrderCommand
+namespace KitchenService.Application.Commands
 {
-    public string OrderId { get; set; } = default!;
-}
-
-public class AcceptOrderCommandHandler
-{
-    private readonly IOrderRepository _repository;
-    private readonly IOrderStatusPublisher _publisher;
-
-    public AcceptOrderCommandHandler(IOrderRepository repository, IOrderStatusPublisher publisher)
+    public class AcceptOrderCommand
     {
-        _repository = repository;
-        _publisher = publisher;
+        public string OrderId { get; set; } = default!;
     }
 
-    public async Task HandleAsync(AcceptOrderCommand command)
+    public class AcceptOrderCommandHandler(IOrderRepository repository, IOrderStatusPublisher publisher)
     {
-        var order = await _repository.GetByIdAsync(command.OrderId)
-            ?? throw new InvalidOperationException("Order not found.");
+        private readonly IOrderRepository _repository = repository;
+        private readonly IOrderStatusPublisher _publisher = publisher;
 
-        order.Accept();
-        await _repository.UpdateAsync(order);
-        await _publisher.PublishAcceptedAsync(order.Id);
+        public async Task HandleAsync(AcceptOrderCommand command)
+        {
+            var order = await _repository.GetByIdAsync(command.OrderId)
+                ?? throw new InvalidOperationException("Pedido não encontrado.");
+
+            order.Accept();
+            await _repository.UpdateAsync(order);
+            await _publisher.PublishAcceptedAsync(order.Id);
+        }
     }
 }

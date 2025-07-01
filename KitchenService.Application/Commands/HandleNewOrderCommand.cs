@@ -7,19 +7,14 @@ namespace KitchenService.Application.Commands;
 public class HandleNewOrderCommand
 {
     public string OrderId { get; set; } = default!;
-    public List<OrderItem> Items { get; set; } = new();
+    public List<OrderItem> Items { get; set; } = [];
     public string DeliveryMethod { get; set; } = default!;
     public DateTime CreatedAt { get; set; }
 }
 
-public class HandleNewOrderCommandHandler
+public class HandleNewOrderCommandHandler(IOrderRepository repository)
 {
-    private readonly IOrderRepository _repository;
-
-    public HandleNewOrderCommandHandler(IOrderRepository repository)
-    {
-        _repository = repository;
-    }
+    private readonly IOrderRepository _repository = repository;
 
     public async Task HandleAsync(HandleNewOrderCommand command)
     {

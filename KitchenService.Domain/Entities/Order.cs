@@ -3,23 +3,14 @@ using KitchenService.Domain.ValueObjects;
 
 namespace KitchenService.Domain.Entities;
 
-public class Order
+public class Order(string id, List<OrderItem> items, string deliveryMethod, DateTime createdAt)
 {
-    public string Id { get; private set; }
-    public List<OrderItem> Items { get; private set; }
-    public string DeliveryMethod { get; private set; }
-    public DateTime CreatedAt { get; private set; }
-    public OrderStatus Status { get; private set; }
+    public string Id { get; private set; } = id;
+    public List<OrderItem> Items { get; private set; } = items;
+    public string DeliveryMethod { get; private set; } = deliveryMethod;
+    public DateTime CreatedAt { get; private set; } = createdAt;
+    public OrderStatus Status { get; private set; } = OrderStatus.Pending;
     public string? RejectionReason { get; private set; }
-
-    public Order(string id, List<OrderItem> items, string deliveryMethod, DateTime createdAt)
-    {
-        Id = id;
-        Items = items;
-        DeliveryMethod = deliveryMethod;
-        CreatedAt = createdAt;
-        Status = OrderStatus.Pending;
-    }
 
     public void Accept()
     {

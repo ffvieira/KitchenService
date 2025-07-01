@@ -15,7 +15,7 @@ public interface IHealthCheck
 public class HealthCheck : IHealthCheck
 {
     private readonly ILogger<HealthCheck> _logger;
-    private readonly IMongoClient _mongoClient;
+    private readonly MongoClient _mongoClient;
     private readonly IConfiguration _configuration;
 
     public HealthCheck(IConfiguration configuration, ILogger<HealthCheck> logger)
@@ -58,9 +58,9 @@ public class HealthCheck : IHealthCheck
 
             var factory = new ConnectionFactory
             {
-                HostName = _configuration["RabbitMq:Host"],
-                UserName = _configuration["RabbitMq:Username"],
-                Password = _configuration["RabbitMq:Password"],
+                HostName = _configuration["RabbitMq:Host"]!,
+                UserName = _configuration["RabbitMq:Username"]!,
+                Password = _configuration["RabbitMq:Password"]!,
                 Port = 5672
             };
 

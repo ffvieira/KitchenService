@@ -4,14 +4,9 @@ using MassTransit;
 
 namespace KitchenService.Infrastructure.Messaging.Consumer;
 
-public class OrderCreatedConsumer : IConsumer<OrderCreatedEvent>
+public class OrderCreatedConsumer(HandleNewOrderCommandHandler handler) : IConsumer<OrderCreatedEvent>
 {
-    private readonly HandleNewOrderCommandHandler _handler;
-
-    public OrderCreatedConsumer(HandleNewOrderCommandHandler handler)
-    {
-        _handler = handler;
-    }
+    private readonly HandleNewOrderCommandHandler _handler = handler;
 
     public async Task Consume(ConsumeContext<OrderCreatedEvent> context)
     {

@@ -1,29 +1,26 @@
 ﻿using KitchenService.Application.Interfaces;
 
-public class RejectOrderCommand
+namespace KitchenService.Application.Commands
 {
-    public string OrderId { get; set; } = default!;
-    public string Reason { get; set; } = default!;
-}
-
-public class RejectOrderCommandHandler
-{
-    private readonly IOrderRepository _repository;
-    private readonly IOrderStatusPublisher _publisher;
-
-    public RejectOrderCommandHandler(IOrderRepository repository, IOrderStatusPublisher publisher)
+    public class RejectOrderCommand
     {
-        _repository = repository;
-        _publisher = publisher;
+        public string OrderId { get; set; } = default!;
+        public string Reason { get; set; } = default!;
     }
 
-    public async Task HandleAsync(RejectOrderCommand command)
+    public class RejectOrderCommandHandler(IOrderRepository repository, IOrderStatusPublisher publisher)
     {
-        var order = await _repository.GetByIdAsync(command.OrderId)
-            ?? throw new InvalidOperationException("Order not found.");
+        private readonly IOrderRepository _repository = repository;
+        private readonly IOrderStatusPublisher _publisher = publisher;
 
-        order.Reject(command.Reason);
-        await _repository.UpdateAsync(order);
-        await _publisher.PublishRejectedAsync(order.Id, command.Reason);
+        public async Task HandleAsync(RejectOrderCommand command)
+        {
+            var order = await _repository.GetByIdAsync(command.OrderId)
+                ?? throw new InvalidOperationException("Pedido não encontrado.");
+
+            order.Reject(command.Reason);
+            await _repository.UpdateAsync(order);
+            await _publisher.PublishRejectedAsync(order.Id, command.Reason);
+        }
     }
 }

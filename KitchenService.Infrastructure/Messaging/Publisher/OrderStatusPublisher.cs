@@ -3,14 +3,9 @@ using MassTransit;
 
 namespace KitchenService.Infrastructure.Messaging.Publisher;
 
-public class OrderStatusPublisher : IOrderStatusPublisher
+public class OrderStatusPublisher(IPublishEndpoint publishEndpoint) : IOrderStatusPublisher
 {
-    private readonly IPublishEndpoint _publishEndpoint;
-
-    public OrderStatusPublisher(IPublishEndpoint publishEndpoint)
-    {
-        _publishEndpoint = publishEndpoint;
-    }
+    private readonly IPublishEndpoint _publishEndpoint = publishEndpoint;
 
     public Task PublishAcceptedAsync(string orderId)
     {
