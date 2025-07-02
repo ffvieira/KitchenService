@@ -1,5 +1,8 @@
 ﻿using KitchenService.Application.Interfaces;
+using KitchenService.Domain.Enums;
 using MassTransit;
+using OrderService.Contracts.Enums;
+using OrderService.Contracts.Events;
 
 namespace KitchenService.Infrastructure.Messaging.Publisher;
 
@@ -7,24 +10,28 @@ public class OrderStatusPublisher(IPublishEndpoint publishEndpoint) : IOrderStat
 {
     private readonly IPublishEndpoint _publishEndpoint = publishEndpoint;
 
-    public Task PublishAcceptedAsync(string orderId)
-    {
-        var evt = new OrderAcceptedEvent
+    public Task PublishOrderStatusAsync(Guid orderId, AcceptOrRejectOrderEnum status)
+    {        
+        if (orderId == Guid.Empty)
+        {
+            throw new ArgumentException("Order ID cannot be empty.", nameof(orderId));
+        }
+        
+        var evt = new AcceptOrRejectOrderEvent
         {
             OrderId = orderId,
-            ProcessedAt = DateTime.UtcNow
+            Status = AcceptOrRejectOrderEnum.Accepted,
         };
 
         return _publishEndpoint.Publish(evt);
     }
 
-    public Task PublishRejectedAsync(string orderId, string reason)
+    public Task PublishRejectedAsync(Guid orderId)
     {
-        var evt = new OrderRejectedEvent
+        var evt = new AcceptOrRejectOrderEvent
         {
             OrderId = orderId,
-            Reason = reason,
-            ProcessedAt = DateTime.UtcNow
+            Status = AcceptOrRejectOrderEnum.Rejected
         };
 
         return _publishEndpoint.Publish(evt);

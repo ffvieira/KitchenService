@@ -16,12 +16,12 @@ public class HandleNewOrderCommandHandlerTests
 
         var command = new HandleNewOrderCommand
         {
-            OrderId = "123",
+            OrderId = Guid.NewGuid(),
             CreatedAt = DateTime.UtcNow,
-            DeliveryMethod = "drive-thru",
+            DeliveryMethod = OrderService.Contracts.Enums.OrderMode.Delivery,
             Items =
             [
-                new("burger01", "Cheeseburger", "Burguer and cheese", 2)
+                new(Guid.NewGuid(), "Cheeseburger", "Burguer and cheese", 2)
             ]
         };
 

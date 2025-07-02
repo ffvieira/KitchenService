@@ -23,7 +23,7 @@ public class OrderRepository : IOrderRepository
         await _collection.InsertOneAsync(order);
     }
 
-    public async Task<Order?> GetByIdAsync(string orderId)
+    public async Task<Order?> GetByIdAsync(Guid orderId)
     {
         var filter = Builders<Order>.Filter.Eq(x => x.Id, orderId);
         return await _collection.Find(filter).FirstOrDefaultAsync();

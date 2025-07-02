@@ -1,26 +1,21 @@
 ﻿using KitchenService.Application.Interfaces;
+using KitchenService.Domain.Enums;
 
 namespace KitchenService.Application.Commands
 {
-    public class RejectOrderCommand
-    {
-        public string OrderId { get; set; } = default!;
-        public string Reason { get; set; } = default!;
-    }
-
     public class RejectOrderCommandHandler(IOrderRepository repository, IOrderStatusPublisher publisher)
     {
         private readonly IOrderRepository _repository = repository;
         private readonly IOrderStatusPublisher _publisher = publisher;
 
-        public async Task HandleAsync(RejectOrderCommand command)
+        public async Task HandleAsync(OrderCommand command)
         {
             var order = await _repository.GetByIdAsync(command.OrderId)
                 ?? throw new InvalidOperationException("Pedido não encontrado.");
 
-            order.Reject(command.Reason);
+            order.ChangeStatus(OrderStatus.Rejected);
             await _repository.UpdateAsync(order);
-            await _publisher.PublishRejectedAsync(order.Id, command.Reason);
+            await _publisher.PublishOrderStatusAsync(command.OrderId, command.Status);
         }
     }
 }

@@ -1,9 +1,9 @@
 namespace KitchenService.Domain.ValueObjects;
 
-public class OrderItem(string productId, string name, string description, int quantity)
+public class OrderItem(Guid productId, string title, string description, int quantity)
 {
-    public string ProductId { get; private set; } = productId;
-    public string Name { get; private set; } = name;
+    public Guid ProductId { get; private set; } = productId;
+    public string Title { get; private set; } = title;
     public string Description { get; private set; } = description;
     public int Quantity { get; private set; } = quantity;
 }

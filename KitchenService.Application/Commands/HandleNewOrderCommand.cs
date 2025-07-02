@@ -1,14 +1,15 @@
 ﻿using KitchenService.Application.Interfaces;
 using KitchenService.Domain.Entities;
 using KitchenService.Domain.ValueObjects;
+using OrderService.Contracts.Enums;
 
 namespace KitchenService.Application.Commands;
 
 public class HandleNewOrderCommand
 {
-    public string OrderId { get; set; } = default!;
+    public Guid OrderId { get; set; } = default!;
     public List<OrderItem> Items { get; set; } = [];
-    public string DeliveryMethod { get; set; } = default!;
+    public OrderMode DeliveryMethod { get; set; } = default!;
     public DateTime CreatedAt { get; set; }
 }
 
@@ -25,7 +26,7 @@ public class HandleNewOrderCommandHandler(IOrderRepository repository)
         var order = new Order(
             id: command.OrderId,
             items: command.Items,
-            deliveryMethod: command.DeliveryMethod,
+            deliveryMethod: command.DeliveryMethod.ToString(),
             createdAt: command.CreatedAt
         );
 

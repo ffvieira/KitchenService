@@ -3,16 +3,10 @@ using MassTransit;
 
 namespace KitchenService.Worker
 {
-    public class Worker : BackgroundService
+    public class Worker(IBusControl bus, IHealthCheck healthCheck) : BackgroundService
     {
-        private readonly IBusControl _bus;
-        private readonly IHealthCheck _healthCheck;
-
-        public Worker(IBusControl bus, IHealthCheck healthCheck)
-        {
-            _bus = bus;
-            _healthCheck = healthCheck;
-        }
+        private readonly IBusControl _bus = bus;
+        private readonly IHealthCheck _healthCheck = healthCheck;
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
