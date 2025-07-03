@@ -1,19 +1,19 @@
-﻿using KitchenService.Application.Commands;
+﻿using KitchenService.Application.Commands.NewCancelledOrder;
 using KitchenService.Domain.ValueObjects;
 using MassTransit;
 using OrderService.Contracts.Events;
 
 namespace KitchenService.Infrastructure.Messaging.Consumer;
 
-public class OrderCreatedConsumer(HandleNewOrderCommandHandler handler) : IConsumer<CreateOrderEvent>
+public class OrderCreatedConsumer(NewOrderCommandHandler handler) : IConsumer<CreateOrderEvent>
 {
-    private readonly HandleNewOrderCommandHandler _handler = handler;
+    private readonly NewOrderCommandHandler _handler = handler;
 
     public async Task Consume(ConsumeContext<CreateOrderEvent> context)
     {
         var msg = context.Message;
 
-        var command = new HandleNewOrderCommand
+        var command = new NewOrderCommand
         {
             OrderId = msg.OrderId,
             DeliveryMethod = msg.Mode,

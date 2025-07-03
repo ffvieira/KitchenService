@@ -25,20 +25,24 @@ public class OrderRepository : IOrderRepository
 
     public async Task<Order?> GetByIdAsync(Guid orderId)
     {
-        var filter = Builders<Order>.Filter.Eq(x => x.Id, orderId);
-        return await _collection.Find(filter).FirstOrDefaultAsync();
+        var order = await _collection.FindAsync(x => x.Id == orderId);
+        return order.FirstOrDefault();
     }
 
     public async Task<IEnumerable<Order>> GetPendingOrdersAsync()
     {
-        var filter = Builders<Order>.Filter.Eq(x => x.Status, OrderStatus.Pending);
-        var result = await _collection.Find(filter).ToListAsync();
-        return result;
+        var result = await _collection.FindAsync(x => x.Status == OrderStatus.Pending);
+        return result.ToList();
+    }
+
+    public async Task<IEnumerable<Order>> GetOrdersAsync()
+    {
+        var result = await _collection.FindAsync(x => x.Status == OrderStatus.Pending || x.Status == OrderStatus.Accepted || x.Status == OrderStatus.Rejected);
+        return result.ToList();
     }
 
     public async Task UpdateAsync(Order order)
     {
-        var filter = Builders<Order>.Filter.Eq(x => x.Id, order.Id);
-        await _collection.ReplaceOneAsync(filter, order, new ReplaceOptions { IsUpsert = true });
+        await _collection.ReplaceOneAsync(x => x.Id == order.Id, order, new ReplaceOptions { IsUpsert = true });
     }
 }

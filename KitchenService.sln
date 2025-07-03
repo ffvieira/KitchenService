@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenService.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenService.Tests", "KitchenService.Tests\KitchenService.Tests.csproj", "{DE130F20-549F-4A76-8584-13A2D8BCE4A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenService.Worker", "KitchenService.Worker\KitchenService.Worker.csproj", "{B0AAD89D-97B0-4E79-BC12-03AD41FEBFB5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenService.API", "KitchenService.API\KitchenService.API.csproj", "{4E4BCC81-9EAD-4E37-A85D-99F5905AC7F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenService.API", "KitchenService.API\KitchenService.API.csproj", "{4E4BCC81-9EAD-4E37-A85D-99F5905AC7F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{DE130F20-549F-4A76-8584-13A2D8BCE4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE130F20-549F-4A76-8584-13A2D8BCE4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE130F20-549F-4A76-8584-13A2D8BCE4A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0AAD89D-97B0-4E79-BC12-03AD41FEBFB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0AAD89D-97B0-4E79-BC12-03AD41FEBFB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0AAD89D-97B0-4E79-BC12-03AD41FEBFB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0AAD89D-97B0-4E79-BC12-03AD41FEBFB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E4BCC81-9EAD-4E37-A85D-99F5905AC7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4E4BCC81-9EAD-4E37-A85D-99F5905AC7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E4BCC81-9EAD-4E37-A85D-99F5905AC7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU

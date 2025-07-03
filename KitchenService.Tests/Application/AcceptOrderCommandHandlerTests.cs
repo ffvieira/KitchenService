@@ -1,4 +1,4 @@
-using KitchenService.Application.Commands;
+using KitchenService.Application.Commands.AcceptedRejectedOrder;
 using KitchenService.Application.Interfaces;
 using KitchenService.Domain.Entities;
 using KitchenService.Domain.Enums;
@@ -20,7 +20,7 @@ public class AcceptOrderCommandHandlerTests
         var handler = new AcceptOrderCommandHandler(repo, publisher);
 
         // Act
-        var command = new OrderCommand { OrderId = order.Id, Status = OrderService.Contracts.Enums.AcceptOrRejectOrderEnum.Accepted };
+        var command = new OrderCommand(order.Id, OrderService.Contracts.Enums.AcceptOrRejectOrderEnum.Accepted);
         await handler.HandleAsync(command);
 
         // Assert

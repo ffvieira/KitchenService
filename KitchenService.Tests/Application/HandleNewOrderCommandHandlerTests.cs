@@ -1,4 +1,5 @@
 using KitchenService.Application.Commands;
+using KitchenService.Application.Commands.NewCancelledOrder;
 using KitchenService.Application.Interfaces;
 using NSubstitute;
 using Xunit;
@@ -12,9 +13,9 @@ public class HandleNewOrderCommandHandlerTests
     {
         // Arrange
         var repo = Substitute.For<IOrderRepository>();
-        var handler = new HandleNewOrderCommandHandler(repo);
+        var handler = new NewOrderCommandHandler(repo);
 
-        var command = new HandleNewOrderCommand
+        var command = new NewOrderCommand
         {
             OrderId = Guid.NewGuid(),
             CreatedAt = DateTime.UtcNow,
