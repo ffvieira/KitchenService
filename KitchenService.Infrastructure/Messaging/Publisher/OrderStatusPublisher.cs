@@ -1,5 +1,4 @@
 ﻿using KitchenService.Application.Interfaces;
-using KitchenService.Domain.Enums;
 using MassTransit;
 using OrderService.Contracts.Enums;
 using OrderService.Contracts.Events;
@@ -21,17 +20,6 @@ public class OrderStatusPublisher(IPublishEndpoint publishEndpoint) : IOrderStat
         {
             OrderId = orderId,
             Status = AcceptOrRejectOrderEnum.Accepted,
-        };
-
-        return _publishEndpoint.Publish(evt);
-    }
-
-    public Task PublishRejectedAsync(Guid orderId)
-    {
-        var evt = new AcceptOrRejectOrderEvent
-        {
-            OrderId = orderId,
-            Status = AcceptOrRejectOrderEnum.Rejected
         };
 
         return _publishEndpoint.Publish(evt);

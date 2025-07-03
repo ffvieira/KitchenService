@@ -1,4 +1,4 @@
-using KitchenService.Application.Commands;
+using KitchenService.Application.Commands.NewCancelledOrder;
 using KitchenService.Application.Interfaces;
 using KitchenService.Infrastructure.Messaging.Consumer;
 using KitchenService.Infrastructure.Messaging.Publisher;
@@ -12,7 +12,7 @@ var host = Host.CreateDefaultBuilder(args)
     {
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IOrderStatusPublisher, OrderStatusPublisher>();
-        services.AddScoped<HandleNewOrderCommandHandler>();
+        services.AddScoped<NewOrderCommandHandler>();
         services.AddSingleton<IHealthCheck, HealthCheck>();
 
 
