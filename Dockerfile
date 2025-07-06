@@ -7,9 +7,9 @@ ARG ARG_SECRET_NUGET_PACKAGES
 COPY . ./
 
 # Adicionar a fonte privada do GitHub Packages
-RUN dotnet nuget add source "https://nuget.pkg.github.com/ffvieira/index.json" \
+RUN dotnet nuget add source "https://nuget.pkg.github.com/caiofabiogomes/index.json" \
     --name github \
-    --username ffvieira \
+    --username caiofabiogomes \
     --password "$ARG_SECRET_NUGET_PACKAGES" \
     --store-password-in-clear-text
 
@@ -25,4 +25,4 @@ COPY --from=build-env /App/out ./
 
 EXPOSE 8080
 
-ENTRYPOINT ["dotnet", "KitchenService.API.dll"]
+ENTRYPOINT ["dotnet", "OrderService.API.dll"]
