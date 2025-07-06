@@ -25,4 +25,4 @@ COPY --from=build-env /App/out ./
 
 EXPOSE 8080
 
-ENTRYPOINT ["dotnet", "OrderService.API.dll"]
+ENTRYPOINT ["dotnet", "KitchenService.API.dll"]
