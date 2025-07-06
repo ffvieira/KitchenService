@@ -52,18 +52,31 @@ namespace KitchenService.API.Controllers
 
         [HttpPost("AcceptOrder")]
         [Authorize(Roles = "Atendente")]
-        public async Task<IActionResult> AcceptOrderAsync([FromBody] Guid orderId)
+        public async Task<IActionResult> AcceptOrderAsync(Guid orderId)
         {
-            await _acceptHandler.HandleAsync(new OrderCommand(orderId, AcceptOrRejectOrderEnum.Accepted));
+            var result = await _acceptHandler.HandleAsync(new OrderCommand(orderId, AcceptOrRejectOrderEnum.Accepted));
+
+            if (!result.IsSuccess)
+            {
+                _logger.LogError("Erro ao aceitar o pedido: {Error}", result.Message);
+                return BadRequest(new { Message = result.Message });
+            }
 
             return Ok(new { Message = "Pedido aceito.", OrderId = orderId });
         }
 
-        [HttpPost("RejectedOrder")]
+        [HttpPost("RejectOrder")]
         [Authorize(Roles = "Atendente")]
-        public async Task<IActionResult> RejectedOrderAsync([FromBody] Guid orderId)
+        public async Task<IActionResult> RejectedOrderAsync( Guid orderId)
         {
-            await _rejectHandler.HandleAsync(new OrderCommand(orderId, AcceptOrRejectOrderEnum.Rejected));
+            var result = await _rejectHandler.HandleAsync(new OrderCommand(orderId, AcceptOrRejectOrderEnum.Rejected));
+
+
+            if (!result.IsSuccess)
+            {
+                _logger.LogError("Erro ao rejeitar o pedido: {Error}", result.Message);
+                return BadRequest(new { Message = result.Message });
+            }
 
             return Ok(new { Message = "Pedido recusado.", OrderId = orderId });
         }

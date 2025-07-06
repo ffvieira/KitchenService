@@ -5,9 +5,14 @@ using OrderService.Contracts.Events;
 
 namespace KitchenService.Infrastructure.Messaging.Consumer;
 
-public class OrderCreatedConsumer(NewOrderCommandHandler handler) : IConsumer<CreateOrderEvent>
+public class OrderCreatedConsumer : IConsumer<CreateOrderEvent>
 {
-    private readonly NewOrderCommandHandler _handler = handler;
+    private readonly NewOrderCommandHandler _handler;
+
+    public OrderCreatedConsumer(NewOrderCommandHandler handler)
+    {
+        _handler = handler;
+    }
 
     public async Task Consume(ConsumeContext<CreateOrderEvent> context)
     {
