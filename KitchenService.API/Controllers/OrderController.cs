@@ -24,7 +24,7 @@ namespace KitchenService.API.Controllers
         [HttpGet("health")]
         public async Task<IActionResult> GetHealthAsync(CancellationToken cancellationToken)
         {
-            if (!await _healthCheck.IsMongoDbHealthyAsync(cancellationToken) || !await _healthCheck.IsRabbitMqHealthyAsync())
+            if (!await _healthCheck.IsMongoDbHealthyAsync(cancellationToken))
             {
                 Console.WriteLine("Falha na verificação de Health check. Encerrando aplicação.");
                 Environment.Exit(1);
