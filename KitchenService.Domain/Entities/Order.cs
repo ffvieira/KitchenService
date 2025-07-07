@@ -14,11 +14,13 @@ public class Order(Guid id, List<OrderItem> items, string deliveryMethod, DateTi
     public bool Canceled { get; private set; } = false;
     public string? CanceledJustification { get; private set; }
 
-    public void ChangeStatus(OrderStatus status)
+    public bool ChangeStatus(OrderStatus status)
     {
         if (Status != OrderStatus.Pending)
-            throw new InvalidOperationException("Order is not in a state that can be accepted.");
+            return false;
+        
         Status = status;
+        return true;
     }
 
     public void OrderCanceled(bool canceled, string justification, DateTime updatedAt)

@@ -12,7 +12,7 @@ public class OrderRepository : IOrderRepository
 
     public OrderRepository(IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("MongoDb")!;
+        var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION") ?? configuration.GetConnectionString("MongoDb");
         var mongoClient = new MongoClient(connectionString);
         var database = mongoClient.GetDatabase("KitchenDb");
         _collection = database.GetCollection<Order>("Orders");

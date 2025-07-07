@@ -19,7 +19,7 @@ public class OrderStatusPublisher(IPublishEndpoint publishEndpoint) : IOrderStat
         var evt = new AcceptOrRejectOrderEvent
         {
             OrderId = orderId,
-            Status = AcceptOrRejectOrderEnum.Accepted,
+            Status = status,
         };
 
         return _publishEndpoint.Publish(evt);

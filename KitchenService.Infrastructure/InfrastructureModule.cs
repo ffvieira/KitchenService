@@ -95,9 +95,19 @@ namespace KitchenService.Infrastructure
                 {
                     cfg.Host(envHostRabbitMqServer);
 
-                    cfg.ReceiveEndpoint("kitchen-order-created", e =>
+                    cfg.ReceiveEndpoint("order-created-event", e =>
                     {
                         e.ConfigureConsumer<OrderCreatedConsumer>(ctx);
+                    });
+
+                    cfg.ReceiveEndpoint("cancel-order-event", e =>
+                    {
+                        e.ConfigureConsumer<OrderCanceledConsumer>(ctx);
+                    });
+
+                    cfg.Message<AcceptOrderCommandHandler>(x =>
+                    {
+                        x.SetEntityName("accept-or-reject-order-event");
                     });
                 });
             });

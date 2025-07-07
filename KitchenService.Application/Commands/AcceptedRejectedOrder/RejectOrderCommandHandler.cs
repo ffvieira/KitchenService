@@ -16,7 +16,9 @@ namespace KitchenService.Application.Commands.AcceptedRejectedOrder
             if(order == null) 
                 return Result<Guid>.Failure("Pedido não encontrado.");
 
-            order.ChangeStatus(OrderStatus.Rejected);
+            if (!order.ChangeStatus(OrderStatus.Rejected))
+                return Result<Guid>.Failure("Só é possível rejeitar os pedidos que estão como pendentes");
+
             await _repository.UpdateAsync(order);
             await _publisher.PublishOrderStatusAsync(command.OrderId, command.Status);
 
