@@ -18,7 +18,11 @@ namespace KitchenService.Application.Commands.AcceptedRejectedOrder
                 return Result<Guid>.Failure("Pedido não encontrado.");
             }
 
-            order.ChangeStatus(OrderStatus.Accepted);
+            if(!order.ChangeStatus(OrderStatus.Accepted))
+            {
+                return Result<Guid>.Failure("Só é possível aceitar os pedidos que estão como pendentes");
+            }
+
             await _repository.UpdateAsync(order);
             await _publisher.PublishOrderStatusAsync(command.OrderId, command.Status);
 
